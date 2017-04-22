@@ -1,0 +1,81 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret home_elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret home_time_zone
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Weather Prediction
+sensor:
+  platform: yr
+
+# Text to speech
+tts:
+  platform: google
+
+# Media Players
+media_player:
+  - platform: samsungtv
+    host: 192.168.0.20
+    port: 8001
+    mac: FC:F1:36:DD:B2:DF
+  - platform: plex
+
+# Nest
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+# Presence Detection
+device_tracker:
+  - platform: ddwrt
+    host: 192.168.0.1
+    username: !secret ddwrt_username
+    password: !secret ddwrt_password
+
+# Switches
+switch:
+  - platform: tplink
+    host: 192.168.0.30
+
+
+group: !include groups.yaml

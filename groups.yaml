@@ -1,0 +1,9 @@
+kitchen:
+  name: Kitchen
+  view: yes
+  entities:
+    - light.Kitchen_Wall_North
+    - light.Kitchen_Wall_South
+    - light.Kitchen_Hanging_West
+    - light.Kitchen_Hanging_East
+
