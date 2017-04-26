@@ -1,9 +1,72 @@
-kitchen:
-  name: Kitchen
+#########
+# VIEWS #
+#########
+
+zwave:
+  name: ZWave
   view: yes
   entities:
-    - light.Kitchen_Wall_North
-    - light.Kitchen_Wall_South
-    - light.Kitchen_Hanging_West
-    - light.Kitchen_Hanging_East
+    - group.zooz_zse40_4in1
 
+lights:
+  name: Lights
+  view: yes
+  entities:
+    - group.bedroom
+    - group.hallway
+    - group.living_room
+    - group.kitchen
+    - group.study
+
+##########
+# GROUPS #
+##########
+
+# Rooms
+
+Bedroom:
+  - light.bedroom_hanging
+
+Hallway:
+  - light.hallway_north_1
+  - light.hallway_north_2
+  - light.hallway_south_1
+  - light.hallway_south_2
+
+Living Room:
+  - light.living_entrance
+  - light.living_wall_east_left
+  - light.living_wall_east_right
+  - light.living_wall_west_left
+  - light.living_wall_west_right
+  - light.living_chandelier_1
+  - light.living_chandelier_2
+  - light.living_chandelier_3
+  - light.living_chandelier_4
+  - light.living_chandelier_5
+
+Kitchen:
+  - light.kitchen_wall_north
+  - light.kitchen_wall_south
+  - light.kitchen_hanging_west
+  - light.kitchen_hanging_east
+  - light.homeseer_hswd100_wall_dimmer_level_3_0
+
+Study:
+  - light.study_hanging
+
+# ZWave
+
+Zooz ZSE40 4in1:
+  - binary_sensor.zooz_zse40_4in1_sensor_sensor_2_0
+  - sensor.zooz_zse40_4in1_sensor_alarm_level_2_1
+  - sensor.zooz_zse40_4in1_sensor_alarm_type_2_0
+  - sensor.zooz_zse40_4in1_sensor_burglar_2_10
+  - sensor.zooz_zse40_4in1_sensor_clock_2_14
+  - sensor.zooz_zse40_4in1_sensor_emergency_2_13
+  - sensor.zooz_zse40_4in1_sensor_luminance_2_3
+  - sensor.zooz_zse40_4in1_sensor_power_management_2_11
+  - sensor.zooz_zse40_4in1_sensor_relative_humidity_2_5
+  - sensor.zooz_zse40_4in1_sensor_sourcenodeid_2_2
+  - sensor.zooz_zse40_4in1_sensor_system_2_12
+  - sensor.zooz_zse40_4in1_sensor_temperature_2_1

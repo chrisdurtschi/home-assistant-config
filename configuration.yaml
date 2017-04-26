@@ -10,9 +10,7 @@ homeassistant:
   unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: !secret home_time_zone
-
-# Show links to resources in log and frontend
-introduction:
+  customize: !include customize.yaml
 
 # Enables the frontend
 frontend:
@@ -54,10 +52,6 @@ tts:
 
 # Media Players
 media_player:
-  - platform: samsungtv
-    host: 192.168.0.20
-    port: 8001
-    mac: FC:F1:36:DD:B2:DF
   - platform: plex
 
 # Nest
@@ -77,5 +71,10 @@ switch:
   - platform: tplink
     host: 192.168.0.30
 
+# Z-Wave
+zwave:
+  usb_path: /dev/ttyACM0
+
 
 group: !include groups.yaml
+automation: !include automations.yaml

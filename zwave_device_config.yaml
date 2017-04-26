@@ -1,0 +1,6 @@
+binary_sensor.zooz_zse40_4in1_sensor_sensor_2_0:
+  ignored: false
+  polling_intensity: 0
+sensor.zooz_zse40_4in1_sensor_burglar_2_10:
+  ignored: false
+  polling_intensity: 0

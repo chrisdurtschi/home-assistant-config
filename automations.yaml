@@ -1,0 +1,9 @@
+- alias: 'Turn on Living Room lights when motion sensor is tripped'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.zooz_zse40_4in1_sensor_burglar_2_10
+      above: 1
+  action:
+    service: homeassistant.turn_on
+    entity_id: group.living_room
+
